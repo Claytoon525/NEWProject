@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public GameManager Manager;
     public float moveSped = 25;
     public float rotateSped = 75f;
     public float jumpForce = 1;
@@ -29,6 +29,17 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
         if (Physics.Raycast(ray, 1.5f)) {
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+    
+    public void takeDamadge(int dmg)
+    {
+        
+        health -= dmg;
+
+        if(health <= 0)
+        {
+            Manager.endGame();
         }
     }
 
