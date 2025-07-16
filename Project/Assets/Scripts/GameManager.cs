@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     [Header("Screens")]
     public GameObject countdownUI;
     public GameObject gameUI;
+    public GameObject endUI;
+
+    [Header("End UI")]
+    public TMP_Text endUI_level;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +52,10 @@ public class GameManager : MonoBehaviour
     {
         timeActive = false;
         player.enabled = false;
+        endUI_level.text = "Final Level: " + level;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SetScreen(endUI);
     }
 
     // Update is called once per frame
@@ -59,15 +67,21 @@ public class GameManager : MonoBehaviour
         }
         gameUI_health.text = "Health: " + player.health;
         gameUI_level.text = "Level: " + level;
-        gameUI_time.text = "Time: " + (time *10).ToString("F2");
+        gameUI_time.text = "Time: " + (time *1).ToString("F2");
     }
 
     public void SetScreen(GameObject screen)
     {
         gameUI.SetActive(false);
         countdownUI.SetActive(false);
+        endUI.SetActive(false);
         screen.SetActive(true);
     }
+
+    public void onRestartButton(){
+        SceneManager.LoadScene(0);
+    }
+
     IEnumerator CountDownRoutine()
     {
         countdownText.gameObject.SetActive(true);

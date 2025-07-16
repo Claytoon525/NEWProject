@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spike : MonoBehaviour
 {
     
-    public int damadge = 5;
+    public int damadge = 10;
     public PlayerController player;
     // Start is called before the first frame update
     void Start()
