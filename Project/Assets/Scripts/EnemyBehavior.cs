@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour
 {
 
+    public bool attack;
     public Transform player;
     public List<Transform> locations;
     private int locationIndex = 0;
@@ -15,6 +16,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
+        attack = true;
     }
 
     // Update is called once per frame
@@ -43,10 +45,29 @@ public class EnemyBehavior : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Player")
+        if(other.name == "PlayerInRange")
         {
             agent.destination = player.position;
         }
+    }
+    public bool canAttack()
+    {
+        //start coro
+        //attack = true;
+        if(attack == false)
+        {
+            StartCoroutine(CountDownTimer());
+            attack = true;
+        }
+        return attack;
+    }
+     IEnumerator CountDownTimer()
+    {
+        for(int i = 1; i > 0; i --)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        
     }
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using TMPro;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     public float time;
     public bool timeActive;
     public int level;
+    public GameObject enemies;
+    public Vector3 tempPos;
 
     [Header("Game UI")]
     public TMP_Text gameUI_health;
@@ -31,13 +34,17 @@ public class GameManager : MonoBehaviour
     [Header("End UI")]
     public TMP_Text endUI_level;
     // Start is called before the first frame update
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         time = 0;
         player.enabled = false;
+        tempPos = enemies.transform.position;
+        enemies.SetActive(false);
         SetScreen(countdownUI);
         StartCoroutine(CountDownRoutine());
+        Physics.gravity = new Vector3(0, -15f, 0);
     }
 
 
@@ -75,6 +82,7 @@ public class GameManager : MonoBehaviour
         gameUI.SetActive(false);
         countdownUI.SetActive(false);
         endUI.SetActive(false);
+
         screen.SetActive(true);
     }
 
@@ -94,6 +102,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         player.enabled = true;
+        tempPos = enemies.transform.position;
+        enemies.SetActive(true);
         startGame();
     }
 }

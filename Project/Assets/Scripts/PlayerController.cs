@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public GameManager Manager;
     public float moveSped = 25;
     public float rotateSped = 75f;
-    public float jumpForce = 1;
+    public float jumpForce = 2;
     public Rigidbody rig;
     public int health = 100;
 
+
     //public Animator anim;
+
 
     void Move()
     {
@@ -55,10 +57,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-      0  
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -73,9 +72,22 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject,name = "MovingSpike")
+        if(other.gameObject.name == "Arrow")
         {
-            health -= 10;
+            health -= 25;
         }
+        if(other.gameObject.name == "Lava")
+        {
+            Manager.endGame();
+        }
+    }
+    
+    void OnCollisionEnter(Collision other){
+
+        if(other.gameObject.name == "MovingSpike" && other.gameObject.GetComponent<EnemyBehavior>().canAttack()){
+            takeDamadge(25);
+            other.gameObject.GetComponent<EnemyBehavior>().attack = false;
+        }
+
     }
 }
