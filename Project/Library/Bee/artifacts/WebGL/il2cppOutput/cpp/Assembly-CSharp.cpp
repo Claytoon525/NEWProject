@@ -1112,6 +1112,10 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 struct Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___Manager;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Pillar;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___lavaObj;
+	int32_t ___delay;
+	int32_t ___speed;
 };
 struct PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -1666,7 +1670,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EnemyBehavior_Update_m5E9ECB6F1C35DF061B
 		NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* L_0 = __this->___agent;
 		float L_1;
 		L_1 = NavMeshAgent_get_remainingDistance_m051C1B408E2740A95B5A5577C5EC7222311AA73A(L_0, NULL);
-		if ((!(((float)L_1) < ((float)(0.200000003f)))))
+		if ((!(((float)L_1) < ((float)(1.0f)))))
 		{
 			goto IL_0025;
 		}
@@ -2357,6 +2361,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Lava_Start_mE7CD0EBBE63B6C27801E8C15892F
 		return;
 	}
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Lava_FixedUpdate_m71BF99563984B12500AB447AAE21D965F9218738 (Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2* __this, const RuntimeMethod* method) 
+{
+	{
+		return;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Lava_Update_mF1588F44C013C2BCF477353C6135E10D02D2600B (Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2616,7 +2626,7 @@ IL_0042:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerController__ctor_mDDAB7C7D82E1A5B3E6C197B1AB9D653DFE554F33 (PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95* __this, const RuntimeMethod* method) 
 {
 	{
-		__this->___moveSped = (25.0f);
+		__this->___moveSped = (15.0f);
 		__this->___rotateSped = (75.0f);
 		__this->___jumpForce = (2.0f);
 		__this->___health = ((int32_t)100);

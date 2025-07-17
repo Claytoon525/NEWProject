@@ -48,25 +48,33 @@
         "dependencies": [
           {
             "name": "Animation",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/SampleScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AnimationClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/SampleScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "Animator",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/SampleScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AnimatorController",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/SampleScene.unity"
+            ],
             "dependencyType": 1,
             "icon": null
           },
@@ -91,7 +99,7 @@
           {
             "name": "Motion",
             "scenes": [],
-            "dependencyType": 0,
+            "dependencyType": 1,
             "icon": null
           },
           {

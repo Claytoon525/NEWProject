@@ -7895,6 +7895,10 @@ struct GroupWeightManipulator_tCB9D6F406D2E95A5DB2616F503666C4AB47989ED  : publi
 struct Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* ___Manager;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Pillar;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___lavaObj;
+	int32_t ___delay;
+	int32_t ___speed;
 };
 struct NavMeshLink_t0D6058246FEA52B16CBCCC7A3730E3F818C85269  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -12566,9 +12570,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4371[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4372[15] = 
 {
 	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___player)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___time)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___timeActive)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___level)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___enemies)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___tempPos)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameUI_health)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameUI_level)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameUI_time)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___countdownText)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___countdown)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___countdownUI)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameUI)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___endUI)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___endUI_level)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4373[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4373[5] = 
 {
-	static_cast<int32_t>(offsetof(Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2, ___Manager)),};
+	static_cast<int32_t>(offsetof(Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2, ___Manager)),static_cast<int32_t>(offsetof(Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2, ___Pillar)),static_cast<int32_t>(offsetof(Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2, ___lavaObj)),static_cast<int32_t>(offsetof(Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2, ___delay)),static_cast<int32_t>(offsetof(Lava_t46127F4E65D81A258AEC229087A5AA4EFBA1EDE2, ___speed)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4374[6] = 
 {
 	static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___Manager)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___moveSped)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___rotateSped)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___jumpForce)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___rig)),static_cast<int32_t>(offsetof(PlayerController_t7E8D7042FA2D0DFEC54A1FCDF395161D88DAAE95, ___health)),};

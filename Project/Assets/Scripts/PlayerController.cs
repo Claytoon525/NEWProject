@@ -7,7 +7,7 @@ using Input = UnityEngine.Input;
 public class PlayerController : MonoBehaviour
 {
     public GameManager Manager;
-    public float moveSped = 25;
+    public float moveSped = 15;
     public float rotateSped = 75f;
     public float jumpForce = 2;
     public Rigidbody rig;

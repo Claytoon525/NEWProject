@@ -22,7 +22,7 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(agent.remainingDistance < 0.2f && !agent.pathPending)
+        if(agent.remainingDistance < 1f && !agent.pathPending)
         {
             MoveToNextPatrolLocation();
         }
